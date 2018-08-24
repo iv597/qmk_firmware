@@ -1,11 +1,51 @@
 #include QMK_KEYBOARD_H
-
 // Helpful defines
 #define _______ KC_TRNS
 #define xxxxxxx KC_NO
 
 // Shorten Keynames
 #define SHGUI SCMD(xxxxxxx)
+
+// Leader Key Funsies!
+#define LEADER_TIMEOUT 350
+#include "emotes.h"
+
+LEADER_EXTERNS();
+
+void matrix_scan_user(void) {
+    LEADER_DICTIONARY() {
+        leading = false;
+        leader_end();
+
+        SEQ_TWO_KEYS(KC_T, KC_F) {
+            EMOTE_TABLE_FLIP()
+        }
+
+        SEQ_THREE_KEYS(KC_A, KC_T, KC_F) {
+            EMOTE_ANGRY_TABLE_FLIP()
+        }
+
+        SEQ_THREE_KEYS(KC_F, KC_C, KC_A) {
+            EMOTE_FLAG_CA()
+        }
+
+        SEQ_THREE_KEYS(KC_F, KC_U, KC_S) {
+            EMOTE_FLAG_US()
+        }
+
+        SEQ_TWO_KEYS(KC_M, KC_L) {
+            EMOTE_MAPLE_LEAF()
+        }
+
+        SEQ_THREE_KEYS(KC_S, KC_H, KC_R) {
+            EMOTE_SHRUGGIE()
+        }
+
+        SEQ_THREE_KEYS(KC_P, KC_O, KC_O) {
+            EMOTE_POOP()
+        }
+    }
+}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Dvorak
@@ -23,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_GESC, KC_QUOT, KC_COMM, KC_DOT, KC_P,     KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC,
       KC_TAB,  KC_A,    KC_O,    KC_E,   KC_U,     KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_ENT,
       KC_LGUI, KC_SCLN, KC_Q,    KC_J,   KC_K,     KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_LALT,
-      KC_LCTL, MO(4),   SHGUI,   MO(2),  MO(3),    KC_LSFT, KC_SPC,  MO(1),   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT),
+      KC_LCTL, KC_LEAD/*MO(4)*/,   SHGUI,   MO(2),  MO(3),    KC_LSFT, KC_SPC,  MO(1),   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT),
 
   [1] = LAYOUT_ortho_4x12(
       KC_GESC, xxxxxxx, xxxxxxx, KC_F10, KC_F11,   KC_F12,  xxxxxxx, KC_PSLS, KC_7,    KC_8,    KC_9,    KC_PCMM,
