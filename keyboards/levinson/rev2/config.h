@@ -38,6 +38,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROW_PINS { D4, D7, E6, B4 }
 #define MATRIX_COL_PINS { F6, F7, B1, B3, F5, B6 }
 
+#define MASTER_RIGHT
+
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCING_DELAY 5
 
