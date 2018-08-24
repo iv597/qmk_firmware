@@ -8,7 +8,6 @@
 
 // Leader Key Funsies!
 #define LEADER_TIMEOUT 350
-#include "emotes.h"
 
 LEADER_EXTERNS();
 
@@ -16,34 +15,7 @@ void matrix_scan_user(void) {
     LEADER_DICTIONARY() {
         leading = false;
         leader_end();
-
-        SEQ_TWO_KEYS(KC_T, KC_F) {
-            EMOTE_TABLE_FLIP()
-        }
-
-        SEQ_THREE_KEYS(KC_A, KC_T, KC_F) {
-            EMOTE_ANGRY_TABLE_FLIP()
-        }
-
-        SEQ_THREE_KEYS(KC_F, KC_C, KC_A) {
-            EMOTE_FLAG_CA()
-        }
-
-        SEQ_THREE_KEYS(KC_F, KC_U, KC_S) {
-            EMOTE_FLAG_US()
-        }
-
-        SEQ_TWO_KEYS(KC_M, KC_L) {
-            EMOTE_MAPLE_LEAF()
-        }
-
-        SEQ_THREE_KEYS(KC_S, KC_H, KC_R) {
-            EMOTE_SHRUGGIE()
-        }
-
-        SEQ_THREE_KEYS(KC_P, KC_O, KC_O) {
-            EMOTE_POOP()
-        }
+#include "emotes.h"
     }
 }
 
