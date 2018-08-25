@@ -40,6 +40,8 @@ As you can see, you have a few function. You can use `SEQ_ONE_KEY` for single-ke
 
 Each of these accepts one or more keycodes as arguments. This is an important point: You can use keycodes from **any layer on your keyboard**. That layer would need to be active for the leader macro to fire, obviously.
 
+If you would rather end the sequence with enter instead of having a timeout, include the line `#define LEADER_MODE` in your config.h and you can take as long as you want. If you want to cancel your action, simply press the leader key again.
+
 ## Adding Leader Key Support in the `rules.mk`
 
 To add support for Leader Key you simply need to add a single line to your keymap's `rules.mk`:
