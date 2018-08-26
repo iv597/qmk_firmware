@@ -25,6 +25,7 @@ emoticons = {
 
     # Emoticons, but fancier
     'ANGRY_TABLE_FLIP': r'(ノಠ痊ಠ)ノ彡┻━┻',
+    'CELEBRATORY_GLITTER': r'+｡:.ﾟヽ(´∀｡)ﾉﾟ.:｡+ﾟﾟ+｡:.ﾟヽ(*´∀)ﾉﾟ.:｡+ﾟ',
     'SHRUGGIE': r'¯\_(ツ)_/¯',
     'TABLE_FLIP': r'(╯°□°）╯︵ ┻━┻',
 }
@@ -32,6 +33,8 @@ emoticons = {
 mappings = {
     'br': 'BEER',
     'brt': 'BEER_TOAST',
+
+    'cel': 'CELEBRATORY_GLITTER',
 
     'fcs': 'FACE_CUTE_SMILE',
     'fhe': 'FACE_HEART_EYES',
