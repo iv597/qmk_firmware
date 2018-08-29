@@ -38,7 +38,7 @@ void leader_end(void);
 #define LEADER_DICTIONARY() if (leading && timer_elapsed(leader_time) > LEADER_TIMEOUT)
 
 #else
-#define LEADER_DICTIONARY() if (leading && leader_time == -1)
+#define LEADER_DICTIONARY() if (leading && leader_time == 65535)
 #endif
 
 #endif
