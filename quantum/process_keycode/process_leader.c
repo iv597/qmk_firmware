@@ -55,7 +55,7 @@ bool process_leader(uint16_t keycode, keyrecord_t *record) {
 #else
       if (leading) {
         if (keycode == KC_ENT) {
-          leader_time = -1;
+          leader_time = 25535;
           record->event.pressed = false;
           return true;
         }
